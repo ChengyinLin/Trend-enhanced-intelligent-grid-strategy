@@ -1,5 +1,6 @@
 # Trend-enhanced-intelligent-grid-strategy--V3.0
 趋势增强型智能网格策略 v3.0 - 优化版
+
 修复了原版的bug，提升了性能，优化了代码结构
 
 主要优化：
