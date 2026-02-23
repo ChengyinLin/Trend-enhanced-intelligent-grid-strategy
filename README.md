@@ -1,3 +1,25 @@
+# Trend-enhanced-intelligent-grid-strategy--V3.1
+趋势增强型智能网格策略 v3.1 (Bug修复版)
+
+修复了可视化中的索引对齐问题
+
+修复内容
+主要修复了 create_comprehensive_report 方法中的索引对齐问题
+
+## 其他改进：
+修复了 StrategyVisualizer 的初始化：现在正确传递 config 参数
+
+改进了买入持有基准的查找逻辑：使用 idxmax() 找到第一个满足条件的索引
+
+添加了收益对比标注：在图表上显示策略和买入持有的具体收益率
+
+修复了成交量颜色计算：使用 diff() 计算涨跌，避免字符串列的问题
+
+<img width="3280" height="3945" alt="comprehensive_analysis" src="https://github.com/user-attachments/assets/66bc9080-20f8-4189-ae2a-7ba8f952c5de" />
+
+
+
+----------------------------------------------------------------------
 # Trend-enhanced-intelligent-grid-strategy--V3.0
 趋势增强型智能网格策略 v3.0 - 优化版
 
