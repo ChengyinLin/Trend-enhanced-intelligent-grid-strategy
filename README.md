@@ -1,3 +1,32 @@
+# 趋势增强型智能网格策略 v5.1
+
+基于v5.0跑出收益不乐观，进行常见负收益原因诊断！
+根据量化交易研究[Quantitative Trading_ How to Build Your Own Algorithmic Trading Business.pdf](https://github.com/user-attachments/files/25523527/Quantitative.Trading_.How.to.Build.Your.Own.Algorithmic.Trading.Business.pdf)，网格
+策略亏损的主要原因包括：
+
+Kelly仓位计算错误 - 初始Kelly为0导致无法建仓
+
+网格间距过大 - 价格长期不触及网格导致空仓
+
+止损过于敏感 - 频繁止损割肉
+
+趋势判断错误 - 在下跌趋势中持续加仓
+
+交易成本忽略 - 未考虑手续费和滑点
+
+## 关键修复点
+| 问题            | 原因                              | 修复方案                                  |
+| ------------- | ------------------------------- | ------------------------------------- |
+| **Kelly初始为0** | `current_kelly`初始化为0，导致前N笔无法建仓  | 添加`kelly_initial=0.15`参数，确保初始有仓位      |
+| **网格间距过大**    | `base_grid_pct=0.035`导致价格难以触及   | 降低到`0.025`，增加`grid_levels`到10层        |
+| **止损过于敏感**    | `stop_loss=0.12`在震荡市容易被触发       | 放宽到`0.20`，`atr_stop_multiplier`提高到3.0 |
+| **现金储备过高**    | `min_cash_reserve=0.10`导致资金利用率低 | 降低到`0.02`                             |
+| **忽略交易成本**    | 未考虑手续费和滑点                       | 添加`commission_rate`和`slippage`        |
+| **趋势过滤过严**    | `should_trade`要求alignment>0.5   | 放宽到>-0.2，允许弱趋势交易                      |
+
+
+----------------------------------------------------------------------
+
 # 趋势增强型智能网格策略 v5.0 (Kelly优化版)
 重点引入Kelly准则动态仓位管理、波动率聚类优化和多时间框架协同，这些技术能显著提升收益风险比。
 
