@@ -840,10 +840,10 @@ def print_metrics(metrics: Dict):
 
 
 def main():
-    DATA_PATH = 'C:/Users/1/Desktop/python量化/603993历史数据(2020-2025).csv'
+    DATA_PATH = 'C:/Users/1/Desktop/python量化/300568历史数据.csv'
     OUTPUT_PATH = 'C:/Users/1/Desktop'
     
-    print("趋势增强型网格策略 v5.0 - 修复版")
+    print("趋势增强型网格策略 v5.1 - 修复版")
     
     try:
         df = pd.read_csv(DATA_PATH)
