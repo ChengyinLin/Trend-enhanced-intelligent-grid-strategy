@@ -67,7 +67,8 @@ Kelly仓位管理：提升年化收益 15-25%，同时降低最大回撤 30-40%
 | **再平衡**   | 固定间隔  | 信息熵驱动的智能触发           | -15%交易成本  |
 | **风险控制**  | 固定止损  | ATR止损 + Kelly动态调整    | -30%回撤    |
 
-<img width="3676" height="5140" alt="comprehensive_analysis_v5_kelly" src="https://github.com/user-attachments/assets/2848fd40-5891-45dc-b002-f24d5e779f08" />
+<img width="3676" height="5140" alt="comprehensive_analysis_v5_kelly" src="https://github.com/user-attachments/assets/58959f4e-98a5-4b2c-a7ec-e17a4f6fcb58" />
+
 
 
 ----------------------------------------------------------------------
